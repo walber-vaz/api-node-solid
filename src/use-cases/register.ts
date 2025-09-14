@@ -1,5 +1,5 @@
 import { hashPassword } from '@/lib/hash-password';
-import { prisma } from '@/lib/prisma';
+import type { iUsersRepository } from '@/repositories/users-repository';
 
 interface iRegisterUseCaseRequest {
   name: string;
@@ -8,13 +8,11 @@ interface iRegisterUseCaseRequest {
 }
 
 export class RegisterUseCase {
-  constructor(private userRepository: any) {}
+  constructor(private userRepository: iUsersRepository) {}
 
   async execute({ name, email, password }: iRegisterUseCaseRequest) {
     const hashedPassword = await hashPassword(password);
-    const userExists = await prisma.user.findUnique({
-      where: { email },
-    });
+    const userExists = await this.userRepository.findByEmail(email);
 
     if (userExists) {
       throw new Error('User already exists');
