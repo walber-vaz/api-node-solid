@@ -1,7 +1,5 @@
 import fastify from 'fastify';
-import { z } from 'zod';
-import { hashPassword } from '@/lib/hash-password';
-import { prisma } from '@/lib/prisma';
+import { appRoutes } from '@/http/routes';
 
 export const app = fastify({
   logger: {
@@ -15,23 +13,4 @@ export const app = fastify({
   },
 });
 
-app.post('/users', async (request, reply) => {
-  const createUserBodySchema = z.object({
-    name: z.string(),
-    email: z.email(),
-    password: z.string().min(8),
-  });
-
-  const { email, name, password } = createUserBodySchema.parse(request.body);
-
-  const hashedPassword = await hashPassword(password);
-  await prisma.user.create({
-    data: {
-      name,
-      email,
-      password_hash: hashedPassword,
-    },
-  });
-
-  return reply.status(201).send({ message: 'User created successfully' });
-});
+app.register(appRoutes);
