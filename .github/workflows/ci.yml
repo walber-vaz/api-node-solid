@@ -35,11 +35,3 @@ jobs:
 
       - name: Update badges
         run: npm run update-badges
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
-        with:
-          file: ./coverage/coverage-final.json
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: false
