@@ -1,9 +1,10 @@
 import { app } from '@/app';
+import { env } from '@/config/env';
 
 app
-  .listen({ port: 3333, host: '0.0.0.0' })
+  .listen({ port: env.PORT, host: '0.0.0.0' })
   .then(() => {
-    app.log.info(`🚀 Server listening on http://0.0.0.0:3333`);
+    app.log.info(`🚀 Server listening on http://0.0.0.0:${env.PORT}`);
   })
   .catch((err) => {
     app.log.error(err);
