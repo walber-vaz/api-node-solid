@@ -1,7 +1,6 @@
 import type { FastifyReply, FastifyRequest } from 'fastify';
 import { z } from 'zod';
-import { hashPassword } from '@/lib/hash-password';
-import { prisma } from '@/lib/prisma';
+import { registerUseCase } from '@/use-cases/register';
 
 export const register = async (
   request: FastifyRequest,
@@ -15,22 +14,11 @@ export const register = async (
 
   const { email, name, password } = createUserBodySchema.parse(request.body);
 
-  const hashedPassword = await hashPassword(password);
-  const userExists = await prisma.user.findUnique({
-    where: { email },
-  });
-
-  if (userExists) {
-    return reply.status(409).send({ message: 'User already exists' });
+  try {
+    await registerUseCase({ name, email, password });
+  } catch {
+    return reply.status(409).send();
   }
-
-  await prisma.user.create({
-    data: {
-      name,
-      email,
-      password_hash: hashedPassword,
-    },
-  });
 
   return reply.status(201).send({ message: 'User created successfully' });
 };
