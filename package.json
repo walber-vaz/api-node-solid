@@ -15,7 +15,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest run --ui",
+    "update-badges": "node scripts/update-badges.js",
+    "test:badges": "npm run test:coverage && npm run update-badges"
   },
   "keywords": [],
   "author": "",

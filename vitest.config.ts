@@ -14,6 +14,8 @@ export default defineConfig({
       'src/lib/prisma.ts',
     ],
     coverage: {
+      reporter: ['text', 'json', 'json-summary', 'html'],
+      reportOnFailure: true,
       exclude: [
         'coverage/**',
         'dist/**',
