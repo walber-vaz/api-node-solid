@@ -1,0 +1,14 @@
+services:
+  db:
+    image: bitnami/postgresql:latest
+    environment:
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=app_solid_node_api
+    ports:
+      - "5432:5432"
+    volumes:
+      - api-node-solid-db-data:/bitnami/postgresql
+
+volumes:
+  api-node-solid-db-data:
