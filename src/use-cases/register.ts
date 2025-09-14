@@ -1,5 +1,6 @@
 import { hashPassword } from '@/lib/hash-password';
 import { prisma } from '@/lib/prisma';
+import { PrismaUsersRepository } from '@/repositories/prisma-users-repository';
 
 interface iRegisterUseCaseRequest {
   name: string;
@@ -21,11 +22,11 @@ export const registerUseCase = async ({
     throw new Error('User already exists');
   }
 
-  await prisma.user.create({
-    data: {
-      name,
-      email,
-      password_hash: hashedPassword,
-    },
+  const prismaUsersRepository = new PrismaUsersRepository();
+
+  await prismaUsersRepository.create({
+    name,
+    email,
+    password_hash: hashedPassword,
   });
 };
