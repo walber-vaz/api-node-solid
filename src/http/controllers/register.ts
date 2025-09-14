@@ -26,7 +26,7 @@ export const register = async (
       return reply.status(409).send({ message: err.message });
     }
 
-    return reply.status(500).send({ message: 'Internal server error' });
+    throw err;
   }
 
   return reply.status(201).send({ message: 'User created successfully' });
