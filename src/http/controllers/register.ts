@@ -16,6 +16,14 @@ export const register = async (
   const { email, name, password } = createUserBodySchema.parse(request.body);
 
   const hashedPassword = await hashPassword(password);
+  const userExists = await prisma.user.findUnique({
+    where: { email },
+  });
+
+  if (userExists) {
+    return reply.status(409).send({ message: 'User already exists' });
+  }
+
   await prisma.user.create({
     data: {
       name,
