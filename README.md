@@ -56,10 +56,18 @@ Uma API REST construída com Node.js, TypeScript e Fastify seguindo os princípi
 - ✅ Autenticação com email/senha
 - ✅ Perfil do usuário
 
+### Academias
+
+- ✅ Cadastro de academias
+- ✅ Busca de academias por nome
+- ✅ Busca de academias próximas (por localização)
+
 ### Check-ins
 
-- ✅ Criação de check-ins em academias
-- 🚧 Validação de check-ins (em desenvolvimento)
+- ✅ Criação de check-ins em academias (com validação de distância)
+- ✅ Histórico de check-ins do usuário (paginado)
+- ✅ Métricas do usuário (contagem de check-ins)
+- ✅ Validação de check-in único por dia
 
 ## 🏗️ Arquitetura
 
