@@ -16,16 +16,16 @@ describe('Search Gyms Use Case', () => {
       title: 'JavaScript Gym',
       description: null,
       phone: null,
-      latitude: -27.2092052,
-      longitude: -49.6401091,
+      latitude: -1.3408329,
+      longitude: -48.5292653,
     });
 
     await gymsRepository.create({
       title: 'TypeScript Gym',
       description: null,
       phone: null,
-      latitude: -27.2092052,
-      longitude: -49.6401091,
+      latitude: -1.3408329,
+      longitude: -48.5292653,
     });
 
     const { gyms } = await sut.execute({
@@ -45,8 +45,8 @@ describe('Search Gyms Use Case', () => {
         title: `JavaScript Gym ${i}`,
         description: null,
         phone: null,
-        latitude: -27.2092052,
-        longitude: -49.6401091,
+        latitude: -1.3408329,
+        longitude: -48.5292653,
       });
     }
 
