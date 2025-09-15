@@ -1,4 +1,4 @@
-import type { CheckIn, Prisma } from '../../generated/prisma';
+import type { CheckIn, Prisma } from '@prisma/client';
 
 export interface iCheckInsRepository {
   create: (data: Prisma.CheckInUncheckedCreateInput) => Promise<CheckIn>;
