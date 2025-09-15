@@ -1,6 +1,6 @@
+import type { User } from '@prisma/client';
 import { verifyPassword } from '@/lib/hash-password';
 import type { iUsersRepository } from '@/repositories/users-repository';
-import type { User } from '../../generated/prisma';
 import { InvalidCredentialError } from './erros/invalid-credential-error';
 
 interface iAuthenticateUseCaseRequest {

@@ -10,7 +10,6 @@ export default defineConfig({
       '**/cypress/**',
       '**/.{idea,git,cache,output,temp}/**',
       '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*',
-      '**/generated/**',
       'src/lib/prisma.ts',
     ],
     coverage: {
@@ -34,7 +33,6 @@ export default defineConfig({
         '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*',
         '**/vitest.{workspace,projects}.[jt]s?(on)',
         '**/.{eslint,mocha,prettier}rc.{?(c|m)js,yml}',
-        '**/generated/**',
         'src/lib/prisma.ts',
       ],
     },

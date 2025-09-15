@@ -19,7 +19,6 @@
       "!**/package-lock.json",
       "!**/yarn.lock",
       "!**/coverage/",
-      "!**/generated/",
       "!**/*.min.js",
       "!**/*.min.css"
     ]
@@ -43,7 +42,6 @@
       "!**/dist/**",
       "!**/package-lock.json",
       "!**/coverage/**",
-      "!**/generated/**",
       "!**/yarn.lock",
       "!**/*.min.js",
       "!**/*.min.css"
@@ -64,7 +62,6 @@
       "**/*.css",
       "!**/node_modules/**",
       "!**/dist/**",
-      "!**/generated/**",
       "!**/coverage/**",
       "!**/package-lock.json",
       "!**/yarn.lock",

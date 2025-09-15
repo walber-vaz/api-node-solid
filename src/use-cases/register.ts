@@ -1,6 +1,6 @@
+import type { User } from '@prisma/client';
 import { hashPassword } from '@/lib/hash-password';
 import type { iUsersRepository } from '@/repositories/users-repository';
-import type { User } from '../../generated/prisma';
 import { UserAlreadyExistsError } from './erros/user-already-exists-error';
 
 interface iRegisterUseCaseRequest {

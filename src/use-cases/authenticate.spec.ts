@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { hashPassword } from '@/lib/hash-password';
-import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-repository';
+import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository';
 import { AuthenticateUseCase } from './authenticate';
 import { InvalidCredentialError } from './erros/invalid-credential-error';
 

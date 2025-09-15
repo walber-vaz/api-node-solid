@@ -1,5 +1,5 @@
+import type { Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
-import type { Prisma } from '../../../generated/prisma';
 import type { iUsersRepository } from '../users-repository';
 
 export class PrismaUsersRepository implements iUsersRepository {
