@@ -2,6 +2,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository';
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository';
 import { CheckInUseCase } from './check-in';
+import { MaxDistanceError } from './erros/max-distance-error';
+import { MaxNumberOfCheckInsError } from './erros/max-number-of-check-ins-error';
 
 let checkInRepository: InMemoryCheckInsRepository;
 let gymsRepository: InMemoryGymsRepository;
@@ -57,7 +59,7 @@ describe('Check-In Use Case', () => {
         userLatitude: -1.3408329,
         userLongitude: -48.5292653,
       }),
-    ).rejects.toBeInstanceOf(Error);
+    ).rejects.toBeInstanceOf(MaxNumberOfCheckInsError);
   });
 
   it('should not be able to check in twice but on different days', async () => {
@@ -99,6 +101,6 @@ describe('Check-In Use Case', () => {
         userLatitude: -1.377379,
         userLongitude: -48.4531024,
       }),
-    ).rejects.toBeInstanceOf(Error);
+    ).rejects.toBeInstanceOf(MaxDistanceError);
   });
 });
