@@ -10,7 +10,7 @@
 
 ![Build](https://img.shields.io/badge/Build-Passing-brightgreen?logo=github-actions&logoColor=white)
 ![Tests](https://img.shields.io/badge/Tests-9%20passed-brightgreen?logo=vitest&logoColor=white)
-![Coverage](https://img.shields.io/badge/Coverage-58.54%25-orange?logo=vitest&logoColor=white)
+![Coverage](https://img.shields.io/badge/Coverage-59.88%25-orange?logo=vitest&logoColor=white)
 ![Code Quality](https://img.shields.io/badge/Code%20Quality-A-brightgreen?logo=biome&logoColor=white)
 
 ![License](https://img.shields.io/badge/License-MIT-blue?logo=opensourceinitiative&logoColor=white)
